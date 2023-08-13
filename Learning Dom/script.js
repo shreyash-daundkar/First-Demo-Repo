@@ -1,17 +1,13 @@
 
-// Selecting Class
+// Editing new li by getElementsByClassName
 
-const list_group_item = document.getElementsByClassName('list-group-item');
+const new_li_class = document.getElementsByClassName('new-class');
+new_li_class[0].style.backgroundColor = 'green';
 
-// Making the 3 rd element in the list have green background color
+// Editing new li by getElementsByTagName
 
-list_group_item[2].style.backgroundColor = 'green';
-
-// Making all element in list bold
-
-Array.from(list_group_item).forEach(item => {
-    const text = item.innerText;
-    item.innerHTML = `<b>${text}</b>`;
-});
+const li_elements = document.getElementsByTagName('li');
+const text = li_elements[4].innerText;
+li_elements[4].innerHTML = `<i>${text}</i>`;
 
 
