@@ -1,13 +1,19 @@
+// making second items background green
 
-// Editing new li by getElementsByClassName
+const secondItem = document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.backgroundColor = 'green';
 
-const new_li_class = document.getElementsByClassName('new-class');
-new_li_class[0].style.backgroundColor = 'green';
+// making third elements invisible
 
-// Editing new li by getElementsByTagName
+const thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+thirdItem.style.visibility = 'hidden';
 
-const li_elements = document.getElementsByTagName('li');
-const text = li_elements[4].innerText;
-li_elements[4].innerHTML = `<i>${text}</i>`;
+// making second element color green and making all odd elements background green
 
+const elements = document.querySelectorAll('.list-group-item');
+elements[1].style.color = 'green';
+elements.forEach((x, i) => {
+    if(i % 2 == 0) return
+    x.style.backgroundColor = 'green';
+})
 
