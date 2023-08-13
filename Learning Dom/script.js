@@ -1,15 +1,17 @@
 
-// Selecting elements.
+// Selecting Class
 
-const header = document.querySelector('#main-header');
-const formTitle = document.querySelector('#form-title');
+const list_group_item = document.getElementsByClassName('list-group-item');
 
-// Adding bottom border to our title.
+// Making the 3 rd element in the list have green background color
 
-header.style.borderBottom = '3px solid #000';
+list_group_item[2].style.backgroundColor = 'green';
 
-// Making form title bold and green.
+// Making all element in list bold
 
-const formTitleText = formTitle.innerText;
-formTitle.innerHTML = `<b>${formTitleText}</b>`;
-formTitle.style.color = 'green';
+Array.from(list_group_item).forEach(item => {
+    const text = item.innerText;
+    item.innerHTML = `<b>${text}</b>`;
+});
+
+
