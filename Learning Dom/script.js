@@ -1,19 +1,62 @@
-// making second items background green
+// selecting element
 
-const secondItem = document.querySelector('.list-group-item:nth-child(2)');
-secondItem.style.backgroundColor = 'green';
+const items = document.querySelector('#items');
 
-// making third elements invisible
+//  parentNode parentElemnet
 
-const thirdItem = document.querySelector('.list-group-item:nth-child(3)');
-thirdItem.style.visibility = 'hidden';
+console.log(items.parentNode); //
+console.log(items.parentElemnet);
 
-// making second element color green and making all odd elements background green
+// childNode and children
 
-const elements = document.querySelectorAll('.list-group-item');
-elements[1].style.color = 'green';
-elements.forEach((x, i) => {
-    if(i % 2 == 0) return
-    x.style.backgroundColor = 'green';
-})
+console.log(items.childNodes); // elements with textNode
+console.log(items.children); // elements
 
+// firstelementchild and firstchild
+
+console.log(items.firstChild); //textNode
+console.log(items.firstElementChild);
+
+
+// lastelementchild and lastchild
+
+console.log(items.lastChild); //textNode
+console.log(items.lastElementChild);
+
+// nextsibling and nextelementsibling
+
+console.log(items.nextSibling); //textNode
+console.log(items.nextElementSibling);
+
+
+// previoussibling and previouselementsibling
+
+console.log(items.previousSibling); //textNode
+console.log(items.previousElementSibling);
+
+// createelement
+
+const newDiv = document.createElement('div');
+
+// setAttribute
+
+newDiv.setAttribute('id', 'hehe');
+
+// createtesxtnode
+
+const newDivText = document.createTextNode('hold on');
+
+// appendchild
+
+newDiv.appendChild(newDivText);
+console.log(newDiv);
+
+// adding helo before item lister
+
+const header = document.querySelector('#header-title');
+const newText = document.createTextNode('helo');
+header.parentNode.insertBefore(newText, header);
+
+// adding helo before item 1
+
+items.insertBefore(newText, items.children[0]);
